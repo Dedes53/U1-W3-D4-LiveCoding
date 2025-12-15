@@ -74,6 +74,10 @@ const createCellsInCalendar = function () {
     dayCell.classList.add("day"); //<div class="day"></div>
     const dayCellValue = document.createElement("h3"); //<h3></h3>
     dayCellValue.textContent = i + 1; // imposto il testo del giorno (i parte da 0 quindi +1)
+    // se questa cella rappresenta il giormo di oggi la coloro
+    if (i + 1 === now.getDate()) {
+      dayCell.classList.add("color-epic");
+    }
     // appendo l'h3 alla cella
     dayCell.appendChild(dayCellValue); //<div class="day"> <h3>1</h3> </div>
     // appendo la cella al calendario
