@@ -61,3 +61,18 @@ const numberOfDaysInCurrentMonth = function () {
 };
 
 // a questo punto dovrò ripetere la creazione di una singola cella del calendario numberOfDaysCurrentMonth() volte
+//il passo successivo sarà CREARE le CELLE nel caledario; poiché quest'operazione dipende dal numero delle celle da creare non abbiamo potuto farlo nella parte STATICA della pagina (html) abbiamo dovuto delegare JS
+const createCellsInCalendar = function () {
+  // dobbiamo creare un numero di celle pari al numero dei giorni del mese corrente
+  // recuperiamo prima di tutto un riferimento alla parte di HTML che ospiterà le nostre celle
+  const calendarSection = document.getElementById("calendar");
+  const numberOfDays = numberOfDaysInCurrentMonth();
+  //dobbiamo creare una cella numberOfDays volte
+  for (let i = 0; i < numberOfDays; i++) {
+    // per es. 1 volte...
+    const dayCell = document.createElement("div"); //creo un elemento div
+    dayCell.classList.add("day"); // aggiungo la classe day-cell
+    const dayCellValue = document.createElement("h3");
+    dayCellValue.textContent = i + 1; // imposto il testo del giorno (i parte da 0 quindi +1)
+  }
+};
