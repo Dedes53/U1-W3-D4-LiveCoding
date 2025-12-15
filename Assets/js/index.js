@@ -67,12 +67,18 @@ const createCellsInCalendar = function () {
   // recuperiamo prima di tutto un riferimento alla parte di HTML che ospiterà le nostre celle
   const calendarSection = document.getElementById("calendar");
   const numberOfDays = numberOfDaysInCurrentMonth();
-  //dobbiamo creare una cella numberOfDays volte
+  // dobbiamo creare una cella numberOfDays volte
   for (let i = 0; i < numberOfDays; i++) {
     // per es. 1 volte...
-    const dayCell = document.createElement("div"); //creo un elemento div
-    dayCell.classList.add("day"); // aggiungo la classe day-cell
-    const dayCellValue = document.createElement("h3");
+    const dayCell = document.createElement("div"); //<div></div>
+    dayCell.classList.add("day"); //<div class="day"></div>
+    const dayCellValue = document.createElement("h3"); //<h3></h3>
     dayCellValue.textContent = i + 1; // imposto il testo del giorno (i parte da 0 quindi +1)
+    // appendo l'h3 alla cella
+    dayCell.appendChild(dayCellValue); //<div class="day"> <h3>1</h3> </div>
+    // appendo la cella al calendario
+    calendarSection.appendChild(dayCell);
   }
 };
+
+createCellsInCalendar();
