@@ -78,11 +78,16 @@ const createCellsInCalendar = function () {
     if (i + 1 === now.getDate()) {
       dayCell.classList.add("color-epic");
     }
+    // prima di appendere la cella alla pagina la arricchisco anche di un EVENT LISTENER
+    // la renderò sensibile al click
+    dayCell.addEventListener("click", function () {
+      // questa funzione si attiverà ogni volta che cliccherò su una qualsiasi delle celle
+      console.log("Cella ciccata");
+    });
     // appendo l'h3 alla cella
     dayCell.appendChild(dayCellValue); //<div class="day"> <h3>1</h3> </div>
     // appendo la cella al calendario
     calendarSection.appendChild(dayCell);
   }
 };
-
 createCellsInCalendar();
