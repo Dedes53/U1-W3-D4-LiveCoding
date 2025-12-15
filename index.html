@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U1-W3-D4 Live Coding</title>
+  </head>
+  <body>
+    <div calss="container">
+      <main>
+        <h1>
+          <!-- qiu riempirò con il nome del mese -->
+        </h1>
+
+        <section id="calendar">
+          <!-- qui andremo ad inserire le celle del calendario in numero variabile -->
+        </section>
+
+        <!-- sezione degli appuntamenti -->
+        <article>
+          <span id="newMeetingDay">
+            <!-- qui ci andrà a finire i Giorno che selezioneremo del calendario -->
+            <!-- Valore iniziale: -->
+            Click on a day!
+          </span>
+
+          <form>
+            <!-- un fomr è una collezione di inputfield e bottoni -->
+            <div>
+              <h4>Meting Time</h4>
+              <input type="time" id="newMeetingTime" required />
+            </div>
+
+            <div>
+              <h4>Meting Name</h4>
+              <input type="text" id="newMeetingName" placeholder="Dentist, Dinne, etc..." required />
+            </div>
+
+            <div>
+              <!-- questo pusaante riceve automaticamente un type submite per il fatto di essere dentro ad un form -->
+              <button>Save Event</button>
+            </div>
+          </form>
+        </article>
+      </main>
+
+      <div id="appointments">
+        <!-- questa sexione sarà nascosta inizialmente -->
+        <h2>appointments for this day:</h2>
+
+        <ul id="appointmentsList">
+          <!-- qui andranno a finire gli appuntamenti del giorno selezionato. Se presenti si mostrerà tutta la sezione degli appuntamenti-->
+        </ul>
+      </div>
+    </div>
+
+    <script src="Assets/js/index.js"></script>
+  </body>
+</html>
