@@ -40,3 +40,18 @@ printCurrenthMonth();
 // stampato il mese corrente nell'h1 ora è il momento di stampare le celle dei giorni del mese corrente
 // il problema è che questo numero di celle è variabile e alle volte dipende dall'anno
 // un ragionamento potrebbe essere: il numero dei giorni di un mese è pari al valore dell'ULTIMO GIORNO di quel mese
+
+// Ottimo, però purtroppo js non fornisce un metodo nell'oggetto Date in grado di calcolarci automaticamente quale sia l'ULTIMO giorno di un mese
+// però si potrebbe fare questo: a partire dalla data corrente io calcolo il primo giorno del mese successivo e sottraggo un giorno
+// 15 dicembre -> aggiungo 1 al mese e prendo il giorno 1 -> sottraggo 1 giorno -> 31 dicembre
+//... che varrebbe a dire: per calcolare l'ultimo giorno di dicembre -> 0 di gennaio
+// calcoliamoci quante celle vanno create per il mese corrente
+const numberOfDaysInCurrentMonth = function () {
+  const currentMont = now.getMonth(); //11
+  const currentYear = now.getFullYear(); //2025
+
+  // ora cerco di crare la data del giorno PRECEDENTE al primo del maese SUCCESSIVO
+  const lastDayOfCurrentMonth = new Date(currentYear, currentMont + 1, 0);
+  //   console.log(lastDayOfCurrentMonth);
+};
+numberOfDaysInCurrentMonth();
