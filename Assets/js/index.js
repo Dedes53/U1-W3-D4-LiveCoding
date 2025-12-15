@@ -52,6 +52,12 @@ const numberOfDaysInCurrentMonth = function () {
 
   // ora cerco di crare la data del giorno PRECEDENTE al primo del maese SUCCESSIVO
   const lastDayOfCurrentMonth = new Date(currentYear, currentMont + 1, 0);
-  //   console.log(lastDayOfCurrentMonth);
+  console.log(lastDayOfCurrentMonth);
+  // da questa data appena creata che rapprsenta l'ultimo giorno del mese corrente, io ora estrpolo il NUMERO DEL GIORNO
+  const numberOfDays = lastDayOfCurrentMonth.getDate(); //31
+  console.log("NUMERO DI GIORNI DEL MESE CORRENTE: " + numberOfDays);
+
+  return numberOfDays;
 };
-numberOfDaysInCurrentMonth();
+
+// a questo punto dovrò ripetere la creazione di una singola cella del calendario numberOfDaysCurrentMonth() volte
